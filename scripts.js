@@ -62,6 +62,7 @@ function generateCalendar(startDate, daysToAdd, direction) {
     }
     updateFadeEffect();
     applyCenterRowEffect(); // Appliquer l'effet de ligne centrale après la génération du calendrier
+    updateTeamVisibility(); // Mettre à jour la visibilité des équipes après la génération du calendrier
 }
 
 function generateDatesUntil(targetDate) {
