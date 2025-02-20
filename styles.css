@@ -3,6 +3,7 @@ span {
 }
 span:hover {
     color: #003F7F;
+    transition: color 1s ease-in-out;
 }
 body { 
     font-family: Arial, sans-serif; 
