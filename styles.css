@@ -1,3 +1,9 @@
+span {
+    font-size: 12px;
+}
+span:hover {
+    color: #003F7F;
+}
 body { 
     font-family: Arial, sans-serif; 
     text-align: center; 
@@ -58,6 +64,7 @@ td {
     text-align: left; 
     white-space: nowrap; 
     color: black; 
+    transition: font-weight 0.5s ease; /* Transition pour le changement de gras */
 }
 .date-cell { 
     text-align: right; 
@@ -67,10 +74,13 @@ td {
 }
 .today { 
     font-weight: bold;
-    background-color: greenyellow;
+    background-color: greenyellow; /* Fond vert pour la date du jour */
 }
 .weekend { 
     background-color: #f0f0f0; 
+}
+.center-row {
+    font-weight: bold; /* Gras pour la ligne centrale */
 }
 .btn-today, .btn-go { 
     display: inline-block; 
@@ -80,7 +90,7 @@ td {
     background-color: #00509E; /* Couleur de fond des boutons */
     border: none; 
     border-radius: 5px; /* Bords arrondis */
-    transition: background-color 0.3s ease; /* Transition pour le changement de couleur */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour le changement de couleur */
 }
 .btn-today:hover, .btn-go:hover { 
     background-color: #003F7F; /* Couleur de fond au survol */

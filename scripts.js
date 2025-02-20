@@ -61,6 +61,7 @@ function generateCalendar(startDate, daysToAdd, direction) {
         calendarBody.appendChild(fragment);
     }
     updateFadeEffect();
+    applyCenterRowEffect(); // Appliquer l'effet de ligne centrale après la génération du calendrier
 }
 
 function generateDatesUntil(targetDate) {
@@ -117,6 +118,7 @@ function scrollToFormattedDate(dateString) {
         }
     }
     updateFadeEffect();
+    applyCenterRowEffect(); // Appliquer l'effet de ligne centrale après le défilement
 }
 
 function onScroll() {
@@ -135,6 +137,7 @@ function onScroll() {
         container.scrollTop += 150; 
     }
     updateFadeEffect();
+    applyCenterRowEffect(); // Appliquer l'effet de ligne centrale lors du défilement
 }
 
 function updateFadeEffect() {
@@ -154,6 +157,21 @@ function updateFadeEffect() {
             row.classList.add("fade-bottom");
         } else if (rowRect.bottom > containerRect.bottom - 100) {
             row.classList.add("fade-bottom-less");
+        }
+    });
+}
+
+function applyCenterRowEffect() {
+    let container = document.getElementById("calendarContainer");
+    let rows = document.querySelectorAll("#calendarBody tr");
+    let containerRect = container.getBoundingClientRect();
+    let centerY = containerRect.top + containerRect.height / 2;
+
+    rows.forEach(row => {
+        let rowRect = row.getBoundingClientRect();
+        row.classList.remove("center-row");
+        if (Math.abs(centerY - (rowRect.top + rowRect.height / 2)) < rowRect.height / 2) {
+            row.classList.add("center-row");
         }
     });
 }
