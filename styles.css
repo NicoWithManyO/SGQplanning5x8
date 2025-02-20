@@ -63,16 +63,18 @@ body {
     display: none; 
 }
 table {
+
     margin: auto;
     width: 90%;
     max-width: 690px;
     border-collapse: collapse; 
     direction: ltr; 
-    background-color: white; /* Fond blanc pour le tableau */
+    background-color: rgba(255, 255, 255, 0.9)
 }
 td { 
     padding: 5px;
     font-size: 14px;
+    font-weight: bold;
     text-align: left; 
     white-space: nowrap; 
     color: black; 
@@ -90,12 +92,13 @@ td {
     background-color: greenyellow; /* Fond vert pour la date du jour */
 }
 .weekend { 
-    background-color: #f0f0f0; 
+    /* background-color: #f0f0f0; */
+    color: rgb(255, 146, 44);
 }
 .center-row td {
     text-decoration: underline;
     transition: text-decoration 1s ease; /* Transition pour le soulignement */
-    color: #003F7F; /* Couleur du texte pour la ligne centrale */
+    /* color: #003F7F; /* Couleur du texte pour la ligne centrale */
 }
 .btn-today, .btn-go { 
     display: inline-block; 
