@@ -1,0 +1,111 @@
+body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: white; 
+    color: black; 
+}
+.calendar { 
+    width: 100%; 
+    margin: auto; 
+    overflow-y: scroll; 
+    height: 100vh; 
+    direction: rtl; 
+    position: relative; 
+    scrollbar-width: none; 
+}
+.calendar::-webkit-scrollbar { 
+    display: none; 
+}
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    direction: ltr; 
+}
+td { 
+    padding: 10px; 
+    text-align: left; 
+    white-space: nowrap; 
+    color: black; 
+} /* Suppression des bordures horizontales */
+.date-cell { 
+    text-align: right; 
+}
+.extra-cell { 
+    text-align: center; 
+}
+.today { 
+    font-weight: bold; 
+}
+.weekend { 
+    background-color: #f0f0f0; 
+}
+.btn-today { 
+    display: block; 
+    margin: 10px 20px 10px 10px; /* Ajout de l'espace de 20px */
+    padding: 5px 10px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    background-color: #e0e0e0; 
+    color: black; 
+    border: none; 
+}
+.btn-go { 
+    display: inline-block; 
+    margin-left: 5px; /* Ajout de l'espace de 5px */
+    padding: 5px 10px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    background-color: #e0e0e0; 
+    color: black; 
+    border: none; 
+}
+.date-input { 
+    display: inline-block; 
+    padding: 5px; 
+    font-size: 14px; 
+    background-color: #e0e0e0; 
+    color: black; 
+    border: none; 
+}
+.fade-top, .fade-bottom { 
+    opacity: 0.2; 
+    transition: opacity 1s ease; 
+}
+.fade-top-less, .fade-bottom-less { 
+    opacity: 1; 
+    transition: opacity 0.5s ease; 
+}
+.input-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 0; 
+    margin: 10px 0; 
+}
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Reste en place même lors du défilement */
+    z-index: 1000; /* Au-dessus de tout autre contenu */
+    left: 0;
+    top: 0;
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+    overflow: hidden; /* Masque le défilement */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond noir avec opacité */
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
