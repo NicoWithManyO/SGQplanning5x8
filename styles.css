@@ -6,8 +6,33 @@ body {
     height: 100vh; 
     display: flex; 
     flex-direction: column; 
-    background-color: white; 
-    color: black; 
+    background-color: #0070C0; /* Fond bleu */
+    color: white; /* Texte blanc */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    max-width: 690px;
+    margin: auto;
+}
+.header h2 {
+    margin: 0;
+    flex: 1;
+}
+.header .logo {
+    max-width: 100px;
+    height: auto;
+}
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+    }
+    .header .logo {
+        margin-top: 10px;
+    }
 }
 .calendar { 
     width: 100%; 
@@ -17,6 +42,7 @@ body {
     direction: rtl; 
     position: relative; 
     scrollbar-width: none; 
+    background-color: white; /* Fond blanc pour le tableau */
 }
 .calendar::-webkit-scrollbar { 
     display: none; 
@@ -25,13 +51,14 @@ table {
     width: 100%; 
     border-collapse: collapse; 
     direction: ltr; 
+    background-color: white; /* Fond blanc pour le tableau */
 }
 td { 
     padding: 10px; 
     text-align: left; 
     white-space: nowrap; 
     color: black; 
-} /* Suppression des bordures horizontales */
+}
 .date-cell { 
     text-align: right; 
 }
@@ -39,38 +66,53 @@ td {
     text-align: center; 
 }
 .today { 
-    font-weight: bold; 
+    font-weight: bold;
+    background-color: greenyellow;
 }
 .weekend { 
     background-color: #f0f0f0; 
 }
-.btn-today { 
-    display: block; 
-    margin: 10px 20px 10px 10px; /* Ajout de l'espace de 20px */
-    padding: 5px 10px; 
+.btn-today, .btn-go { 
+    display: inline-block; 
+    padding: 10px 20px; 
     font-size: 14px; 
     cursor: pointer; 
-    background-color: #e0e0e0; 
-    color: black; 
+    background-color: #00509E; /* Couleur de fond des boutons */
     border: none; 
+    border-radius: 5px; /* Bords arrondis */
+    transition: background-color 0.3s ease; /* Transition pour le changement de couleur */
+}
+.btn-today:hover, .btn-go:hover { 
+    background-color: #003F7F; /* Couleur de fond au survol */
+}
+.btn-today { 
+    color: greenyellow; /* Couleur du texte des boutons */
+    margin: 10px 20px 10px 10px; /* Ajout de l'espace de 20px */
+}
+.btn-today:hover {
+    color: white;
 }
 .btn-go { 
-    display: inline-block; 
+    color: white;
     margin-left: 5px; /* Ajout de l'espace de 5px */
-    padding: 5px 10px; 
-    font-size: 14px; 
-    cursor: pointer; 
-    background-color: #e0e0e0; 
-    color: black; 
-    border: none; 
+}
+.btn-go:hover {
+    color : greenyellow;
 }
 .date-input { 
     display: inline-block; 
-    padding: 5px; 
+    padding: 10px 20px; 
     font-size: 14px; 
-    background-color: #e0e0e0; 
-    color: black; 
+    background-color: #00509E; /* Couleur de fond */
+    color: white; /* Couleur du texte */
     border: none; 
+    border-radius: 5px; /* Bords arrondis */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour le changement de couleur */
+}
+.date-input:focus { 
+    background-color: #003F7F; /* Couleur de fond au focus */
+    color: greenyellow; /* Couleur du texte au focus */
+    outline: none; /* Supprime le contour par défaut */
 }
 .fade-top, .fade-bottom { 
     opacity: 0.2; 

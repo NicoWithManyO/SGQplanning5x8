@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Planning 5x8 Fusion Continue SGQ/ACC</h2>
+    <div class="header">
+        <h2>Planning 5x8 Fusion Continue</h2>
+        <img src="sgq.png" alt="Logo SGQ" class="logo">
+    </div>
     <div class="input-container">
         <button class="btn-today" onclick="scrollToToday()">AUJOURD'HUI</button>
         <input type="date" class="date-input" id="dateInput">
         <button class="btn-go" onclick="validateDate()">GO</button>
+        
     </div>
     <div class="calendar" id="calendarContainer">
         <table>
@@ -23,6 +27,8 @@
             <p>Chargement en cours...</p>
         </div>
     </div>
+    <span>manyO.dev</span>
     <script src="scripts.js"></script>
+
 </body>
 </html>
