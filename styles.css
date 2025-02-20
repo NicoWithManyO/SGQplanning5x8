@@ -42,7 +42,13 @@ body {
     gap: 10px;
     margin: 10px 0;
 }
+
 .calendar { 
+    background-image: url('usine.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     width: 100%; /* 90% de la largeur du viewport */
     margin: auto; /* Centré horizontalement */
     overflow-y: scroll; 
@@ -51,6 +57,7 @@ body {
     position: relative; 
     scrollbar-width: none; 
     background-color: white; /* Fond blanc pour le tableau */
+
 }
 .calendar::-webkit-scrollbar { 
     display: none; 
