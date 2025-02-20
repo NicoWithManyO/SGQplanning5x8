@@ -55,8 +55,10 @@ body {
 .calendar::-webkit-scrollbar { 
     display: none; 
 }
-table { 
-    width: 100%; 
+table {
+    margin: auto;
+    width: 90%;
+    max-width: 690px;
     border-collapse: collapse; 
     direction: ltr; 
     background-color: white; /* Fond blanc pour le tableau */
@@ -70,6 +72,7 @@ td {
 }
 .date-cell { 
     text-align: right; 
+
 }
 .extra-cell { 
     text-align: center; 
