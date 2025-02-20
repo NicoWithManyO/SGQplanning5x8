@@ -20,6 +20,27 @@
         .fade-top, .fade-bottom { opacity: 0.2; transition: opacity 1s ease; }
         .fade-top-less, .fade-bottom-less { opacity: 1; transition: opacity 0.5s ease; }
         .input-container { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 10px 0; }
+        .modal {
+            display: none; /* Masqué par défaut */
+            position: fixed; /* Reste en place même lors du défilement */
+            z-index: 1000; /* Au-dessus de tout autre contenu */
+            left: 0;
+            top: 0;
+            width: 100%; /* Pleine largeur */
+            height: 100%; /* Pleine hauteur */
+            overflow: hidden; /* Masque le défilement */
+            background-color: rgba(0, 0, 0, 0.5); /* Fond noir avec opacité */
+        }
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -33,6 +54,11 @@
         <table>
             <tbody id="calendarBody"></tbody>
         </table>
+    </div>
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <p>Chargement en cours...</p>
+        </div>
     </div>
 
     <script>
@@ -128,8 +154,20 @@
             let input = document.getElementById("dateInput").value;
             if (!input) return;
             let selectedDate = new Date(input);
-            generateDatesUntil(selectedDate);
-            setTimeout(() => scrollToFormattedDate(formatDate(selectedDate)), 100);
+            showLoadingModal();
+            setTimeout(() => {
+                generateDatesUntil(selectedDate);
+                scrollToFormattedDate(formatDate(selectedDate));
+                hideLoadingModal();
+            }, 100);
+        }
+
+        function showLoadingModal() {
+            document.getElementById("loadingModal").style.display = "block";
+        }
+
+        function hideLoadingModal() {
+            document.getElementById("loadingModal").style.display = "none";
         }
 
         function scrollToFormattedDate(dateString) {
