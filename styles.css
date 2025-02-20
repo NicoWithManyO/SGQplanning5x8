@@ -1,5 +1,6 @@
 span {
     font-size: 12px;
+    transition: color 5s ease-in-out;
 }
 span:hover {
     color: #003F7F;
@@ -19,7 +20,7 @@ body {
 }
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     width: 100%;
@@ -31,21 +32,19 @@ body {
     flex: 1;
 }
 .header .logo {
-    max-width: 100px;
+    max-width: 50px; /* Taille maximale du logo */
     height: auto;
 }
-@media (max-width: 700px) {
-    .header {
-        flex-direction: column;
-        padding: 10px 20px; /* Ajout de padding pour éviter la bande bleue */
-    }
-    .header .logo {
-        margin-top: 10px;
-    }
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 .calendar { 
-    width: 100%; 
-    margin: auto; 
+    width: 100%; /* 90% de la largeur du viewport */
+    margin: auto; /* Centré horizontalement */
     overflow-y: scroll; 
     height: 100vh; 
     direction: rtl; 
@@ -83,6 +82,8 @@ td {
     background-color: #f0f0f0; 
 }
 .center-row td {
+    text-decoration: underline;
+    transition: text-decoration 1s ease; /* Transition pour le soulignement */
     color: #003F7F; /* Couleur du texte pour la ligne centrale */
 }
 .btn-today, .btn-go { 
@@ -134,13 +135,6 @@ td {
 .fade-top-less, .fade-bottom-less { 
     opacity: 1; 
     transition: opacity 0.5s ease; 
-}
-.input-container { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 0; 
-    margin: 10px 0; 
 }
 .checkbox-container {
     display: flex;
