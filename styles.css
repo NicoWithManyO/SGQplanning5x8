@@ -64,7 +64,8 @@ table {
     background-color: white; /* Fond blanc pour le tableau */
 }
 td { 
-    padding: 10px; 
+    padding: 5px;
+    font-size: 14px;
     text-align: left; 
     white-space: nowrap; 
     color: black; 
