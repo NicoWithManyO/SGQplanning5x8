@@ -48,7 +48,7 @@ function generateCalendar(startDate, daysToAdd, direction) {
             if (cycle !== "Repos") {
                 extraCell.style.backgroundColor = teamColors[j];
             }
-            extraCell.classList.add("extra-cell");
+            extraCell.classList.add("extra-cell", `team-${j}`);
             row.appendChild(extraCell);
         }
         if (direction === 'forward') {
@@ -176,6 +176,22 @@ function applyCenterRowEffect() {
     });
 }
 
+function updateTeamVisibility() {
+    const checkboxes = document.querySelectorAll('.team-checkbox');
+    checkboxes.forEach(checkbox => {
+        const teamIndex = checkbox.getAttribute('data-team');
+        const cells = document.querySelectorAll(`.team-${teamIndex}`);
+        cells.forEach(cell => {
+            cell.style.display = checkbox.checked ? '' : 'none';
+        });
+    });
+}
+
+document.querySelectorAll('.team-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', updateTeamVisibility);
+});
+
 document.getElementById("calendarContainer").addEventListener("scroll", onScroll);
 generateCalendar(firstLoadedDate, 120, 'forward');
 setTimeout(scrollToToday, 100);
+updateTeamVisibility();

@@ -64,7 +64,7 @@ td {
     text-align: left; 
     white-space: nowrap; 
     color: black; 
-    transition: font-weight 0.5s ease; /* Transition pour le changement de gras */
+    transition: color 0.5s ease; /* Transition pour le changement de couleur */
 }
 .date-cell { 
     text-align: right; 
@@ -79,8 +79,8 @@ td {
 .weekend { 
     background-color: #f0f0f0; 
 }
-.center-row {
-    font-weight: bold; /* Gras pour la ligne centrale */
+.center-row td {
+    color: #003F7F; /* Couleur du texte pour la ligne centrale */
 }
 .btn-today, .btn-go { 
     display: inline-block; 
@@ -138,6 +138,13 @@ td {
     align-items: center; 
     gap: 0; 
     margin: 10px 0; 
+}
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 .modal {
     display: none; /* Masqué par défaut */
