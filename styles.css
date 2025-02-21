@@ -198,6 +198,7 @@ td {
 .one {
     background-color : #FFFF00;
     padding: 2px;
+    border-radius: 2px;
 }
 .input {
     color : white;
@@ -205,16 +206,20 @@ td {
 .two {
     background-color : #FF0000;
     padding: 2px;
+    border-radius: 2px;
 }
 .three {
     background-color : #00FF00;
     padding: 2px;
+    border-radius: 2px;
 }
 .four {
     background-color : #0000FF;
     padding: 2px;
+    border-radius: 2px;
 }
 .five {
     background-color : #FFA500;
     padding: 2px;
+    border-radius: 2px;
 }
