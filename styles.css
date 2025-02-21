@@ -42,7 +42,6 @@ body {
     gap: 10px;
     margin: 10px 0;
 }
-
 .calendar { 
     background-image: url('usine.jpg');
     background-size: cover;
@@ -57,19 +56,17 @@ body {
     position: relative; 
     scrollbar-width: none; 
     background-color: white; /* Fond blanc pour le tableau */
-
 }
 .calendar::-webkit-scrollbar { 
     display: none; 
 }
 table {
-
     margin: auto;
     width: 90%;
     max-width: 690px;
     border-collapse: collapse; 
     direction: ltr; 
-    background-color: rgba(255, 255, 255, 0.9)
+    background-color: rgba(255, 255, 255, 0.9);
 }
 td { 
     padding: 5px;
@@ -82,7 +79,6 @@ td {
 }
 .date-cell { 
     text-align: right; 
-
 }
 .extra-cell { 
     text-align: center; 
@@ -94,6 +90,9 @@ td {
 .weekend { 
     /* background-color: #f0f0f0; */
     color: rgb(255, 146, 44);
+}
+.holiday { 
+    color: red; /* Couleur rouge pour les jours fériés */
 }
 .center-row td {
     text-decoration: underline;
@@ -173,7 +172,7 @@ td {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: black; /* Fond noir */
+    background-color:  #003F7F; 
     color: white; /* Texte blanc */
     padding: 20px;
     border-radius: 5px;

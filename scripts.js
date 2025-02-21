@@ -15,8 +15,27 @@ const teamCycles = [
 
 const teamColors = ["#FFCCCC", "#CCFFCC", "#CCCCFF", "#FFFFCC", "#FFCCFF"];
 
+const holidays = [
+    "12-31", // Jour de l'An
+    /* "04-21", // Lundi de Pâques */
+    "04-30", // Fête du Travail
+    "05-07", // Victoire 1945
+    "05-28", // Ascension
+    "06-08", // Lundi de Pentecôte
+    "07-13", // Fête Nationale
+    "08-14", // Assomption
+    "10-31", // Toussaint
+    "11-10", // Armistice 1918
+    "12-24"  // Noël
+];
+
 function formatDate(date) {
     return new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+}
+
+function isHoliday(date) {
+    const dateString = date.toISOString().split('T')[0].slice(5); // Obtenir MM-DD
+    return holidays.includes(dateString);
 }
 
 function generateCalendar(startDate, daysToAdd, direction) {
@@ -37,6 +56,9 @@ function generateCalendar(startDate, daysToAdd, direction) {
         }
         if (newDate.getDay() === 0 || newDate.getDay() === 6) {
             dateCell.classList.add("weekend");
+        }
+        if (isHoliday(newDate)) {
+            dateCell.classList.add("holiday");
         }
         row.appendChild(dateCell);
         // Ajout des colonnes supplémentaires avec les cycles des équipes
@@ -152,12 +174,18 @@ function updateFadeEffect() {
 
         if (rowRect.top < containerRect.top + 50) {
             row.classList.add("fade-top");
+            row.style.transform = "rotateX(30deg)"; // Rotation pour l'effet de roue
         } else if (rowRect.top < containerRect.top + 100) {
             row.classList.add("fade-top-less");
+            row.style.transform = "rotateX(15deg)"; // Rotation pour l'effet de roue
         } else if (rowRect.bottom > containerRect.bottom - 50) {
             row.classList.add("fade-bottom");
+            row.style.transform = "rotateX(-30deg)"; // Rotation pour l'effet de roue
         } else if (rowRect.bottom > containerRect.bottom - 100) {
             row.classList.add("fade-bottom-less");
+            row.style.transform = "rotateX(-15deg)"; // Rotation pour l'effet de roue
+        } else {
+            row.style.transform = "rotateX(0deg)"; // Réinitialiser la rotation
         }
     });
 }
@@ -183,7 +211,19 @@ function updateTeamVisibility() {
         const teamIndex = checkbox.getAttribute('data-team');
         const cells = document.querySelectorAll(`.team-${teamIndex}`);
         cells.forEach(cell => {
-            cell.style.display = checkbox.checked ? '' : 'none';
+            if (checkbox.checked) {
+                cell.classList.remove('hidden-cell');
+                cell.classList.add('visible-cell');
+                setTimeout(() => {
+                    cell.style.display = '';
+                }, 500); // Délai pour l'effet de fondu
+            } else {
+                cell.classList.remove('visible-cell');
+                cell.classList.add('hidden-cell');
+                setTimeout(() => {
+                    cell.style.display = 'none';
+                }, 500); // Délai pour l'effet de fondu
+            }
         });
     });
 }
