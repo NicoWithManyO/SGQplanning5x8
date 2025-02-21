@@ -71,6 +71,8 @@ table {
     border-collapse: collapse; 
     direction: ltr; 
     background-color: rgba(255, 255, 255, 0.9);
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 30%);
 }
 td { 
     padding: 5px;
@@ -89,7 +91,9 @@ td {
 }
 .today { 
     font-weight: bold;
-    background-color: greenyellow; /* Fond vert pour la date du jour */
+    background-color: #adff2f; /* Fond vert pour la date du jour */
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(173,255,47,1) 90%);
 }
 .weekend { 
     /* background-color: #f0f0f0; */
