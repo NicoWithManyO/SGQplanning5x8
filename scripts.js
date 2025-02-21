@@ -18,7 +18,7 @@ const teamColors = ["#FFFF00", "#FF0000", "#00FF00",  "#0000FF", "#FFA500"];
 const holidays = [
     "01-01", // Jour de l'An
     /* "04-21", // Lundi de Pâques */
-    "05-10", // Fête du Travail
+    "05-01", // Fête du Travail
     "05-08", // Victoire 1945
     "05-29", // Ascension
     "06-07", // Lundi de Pentecôte

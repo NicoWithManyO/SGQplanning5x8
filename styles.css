@@ -192,17 +192,25 @@ td {
 }
 
 .one {
-    color : "#FFFF00";
+    background-color : #FFFF00;
+    padding: 2px;
+}
+.input {
+    color : white;
 }
 .two {
-    color : "#FF0000";
+    background-color : #FF0000;
+    padding: 2px;
 }
 .three {
-    color : "#00FF00";
+    background-color : #00FF00;
+    padding: 2px;
 }
 .four {
-    color : "#0000FF";
+    background-color : #0000FF;
+    padding: 2px;
 }
 .five {
-    color : "#FFA500";
+    background-color : #FFA500;
+    padding: 2px;
 }
