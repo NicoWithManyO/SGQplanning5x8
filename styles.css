@@ -39,8 +39,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 10px 0;
+    gap: 0px;
+    margin: 0px 0;
 }
 .calendar { 
     background-image: url('usine.jpg');
@@ -101,13 +101,16 @@ td {
 }
 .btn-today, .btn-go { 
     display: inline-block; 
-    padding: 10px 20px; 
+    padding: 11px 20px; 
     font-size: 14px; 
     cursor: pointer; 
     background-color: #00509E; /* Couleur de fond des boutons */
     border: none; 
     border-radius: 5px; /* Bords arrondis */
     transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour le changement de couleur */
+}
+.btn-go {
+    border-radius: 0 5px 5px 0;
 }
 .btn-today:hover, .btn-go:hover { 
     background-color: #003F7F; /* Couleur de fond au survol */
@@ -127,13 +130,14 @@ td {
     color : greenyellow;
 }
 .date-input { 
+
     display: inline-block; 
     padding: 10px 20px; 
     font-size: 14px; 
     background-color: #00509E; /* Couleur de fond */
     color: white; /* Couleur du texte */
     border: none; 
-    border-radius: 5px; /* Bords arrondis */
+    border-radius: 5px 0 0 5px; /* Bords arrondis */
     transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour le changement de couleur */
 }
 .date-input:focus { 
@@ -177,4 +181,8 @@ td {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
+}
+
+.date-input, .btn-go {
+    margin: 0;
 }
