@@ -13,8 +13,8 @@ const teamCycles = [
     ["Repos", "Repos", "Matin", "Matin", "Après-midi", "Après-midi", "Nuit", "Nuit", "Repos", "Repos"]
 ];
 
-const teamColors = ["#FFCCCC", "#CCFFCC", "#CCCCFF", "#FFFFCC", "#FFCCFF"];
-
+//const teamColors = ["#FFCCCC", "#CCFFCC", "#CCCCFF", "#FFFFCC", "#FFCCFF"];
+const teamColors = ["#FFFF00", "#0000FF", "#FF0000", "#FFA500", "#00FF00"]; 
 const holidays = [
     "01-01", // Jour de l'An
     /* "04-21", // Lundi de Pâques */
