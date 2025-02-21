@@ -124,7 +124,7 @@ td {
 }
 .btn-go { 
     color: white;
-    margin-left: 5px; /* Ajout de l'espace de 5px */
+    padding: 11px 20px 11px 15px;
 }
 .btn-go:hover {
     color : greenyellow;
@@ -132,7 +132,7 @@ td {
 .date-input { 
 
     display: inline-block; 
-    padding: 10px 20px; 
+    padding: 10px 10px 10px 20px; 
     font-size: 14px; 
     background-color: #00509E; /* Couleur de fond */
     color: white; /* Couleur du texte */
