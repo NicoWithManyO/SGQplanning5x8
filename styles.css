@@ -186,3 +186,19 @@ td {
 .date-input, .btn-go {
     margin: 0;
 }
+
+.one {
+    color : "#FFFF00";
+}
+.two {
+    color : "#FF0000";
+}
+.three {
+    color : "#00FF00";
+}
+.four {
+    color : "#0000FF";
+}
+.five {
+    color : "#FFA500";
+}

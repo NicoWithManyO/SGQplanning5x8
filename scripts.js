@@ -14,7 +14,7 @@ const teamCycles = [
 ];
 
 //const teamColors = ["#FFCCCC", "#CCFFCC", "#CCCCFF", "#FFFFCC", "#FFCCFF"];
-const teamColors = ["#FFFF00", "#0000FF", "#FF0000", "#FFA500", "#00FF00"]; 
+const teamColors = ["#FFFF00", "#FF0000", "#00FF00",  "#0000FF", "#FFA500"]; 
 const holidays = [
     "01-01", // Jour de l'An
     /* "04-21", // Lundi de Pâques */
@@ -41,6 +41,25 @@ function isHoliday(date) {
 function generateCalendar(startDate, daysToAdd, direction) {
     let calendarBody = document.getElementById("calendarBody");
     let fragment = document.createDocumentFragment();
+    
+    // Dates de référence pour chaque équipe (quand elles sont du matin)
+    const teamStartDates = [
+        new Date(2025, 1, 2),  // Équipe 1 (jaune) : 2 février 2025 - commence par Matin
+        new Date(2025, 1, 4),  // Équipe 2 (bleue) : 4 février 2025 - commence par Matin
+        new Date(2025, 1, 6),  // Équipe 3 (rouge) : 6 février 2025 - commence par Matin
+        new Date(2025, 1, 8),  // Équipe 4 (orange) : 8 février 2025 - commence par Matin
+        new Date(2025, 1, 10)  // Équipe 5 (verte) : 10 février 2025 - commence par Matin
+    ];
+
+    // Décalage initial dans le cycle pour chaque équipe
+    const teamInitialOffsets = [
+        0,  // Équipe 1 commence au début du cycle (Matin)
+        6,  // Équipe 2 commence 6 jours plus tard dans le cycle
+        2,  // Équipe 3 commence 2 jours plus tard dans le cycle
+        8,  // Équipe 4 commence 8 jours plus tard dans le cycle
+        4   // Équipe 5 commence 4 jours plus tard dans le cycle
+    ];
+
     for (let i = 0; i < daysToAdd; i++) {
         let newDate = new Date(startDate);
         newDate.setDate(startDate.getDate() + (direction === 'forward' ? i : -i));
@@ -61,10 +80,14 @@ function generateCalendar(startDate, daysToAdd, direction) {
             dateCell.classList.add("holiday");
         }
         row.appendChild(dateCell);
-        // Ajout des colonnes supplémentaires avec les cycles des équipes
+
         for (let j = 0; j < 5; j++) {
             let extraCell = document.createElement("td");
-            let cycleIndex = (Math.floor((newDate - new Date(2025, 0, 1)) / (1000 * 60 * 60 * 24)) + j * 2) % teamCycles[j].length;
+            let daysSinceStart = Math.floor((newDate - teamStartDates[j]) / (1000 * 60 * 60 * 24));
+            let cycleIndex = (daysSinceStart + teamInitialOffsets[j]) % teamCycles[j].length;
+            if (cycleIndex < 0) {
+                cycleIndex = (teamCycles[j].length + cycleIndex) % teamCycles[j].length;
+            }
             let cycle = teamCycles[j][cycleIndex];
             extraCell.innerText = cycle === "Matin" ? "M" : cycle === "Après-midi" ? "AM" : cycle === "Nuit" ? "N" : "R";
             if (cycle !== "Repos") {
@@ -83,8 +106,8 @@ function generateCalendar(startDate, daysToAdd, direction) {
         calendarBody.appendChild(fragment);
     }
     updateFadeEffect();
-    applyCenterRowEffect(); // Appliquer l'effet de ligne centrale après la génération du calendrier
-    updateTeamVisibility(); // Mettre à jour la visibilité des équipes après la génération du calendrier
+    applyCenterRowEffect();
+    updateTeamVisibility();
 }
 
 function generateDatesUntil(targetDate) {
