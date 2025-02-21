@@ -16,17 +16,17 @@ const teamCycles = [
 const teamColors = ["#FFCCCC", "#CCFFCC", "#CCCCFF", "#FFFFCC", "#FFCCFF"];
 
 const holidays = [
-    "12-31", // Jour de l'An
+    "01-01", // Jour de l'An
     /* "04-21", // Lundi de Pâques */
-    "04-30", // Fête du Travail
-    "05-07", // Victoire 1945
-    "05-28", // Ascension
-    "06-08", // Lundi de Pentecôte
-    "07-13", // Fête Nationale
-    "08-14", // Assomption
-    "10-31", // Toussaint
-    "11-10", // Armistice 1918
-    "12-24"  // Noël
+    "05-10", // Fête du Travail
+    "05-08", // Victoire 1945
+    "05-29", // Ascension
+    "06-07", // Lundi de Pentecôte
+    "07-14", // Fête Nationale
+    "08-15", // Assomption
+    "11-01", // Toussaint
+    "11-11", // Armistice 1918
+    "12-25"  // Noël
 ];
 
 function formatDate(date) {
