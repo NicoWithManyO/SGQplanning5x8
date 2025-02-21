@@ -174,18 +174,18 @@ function updateFadeEffect() {
 
         if (rowRect.top < containerRect.top + 50) {
             row.classList.add("fade-top");
-            row.style.transform = "rotateX(30deg)"; // Rotation pour l'effet de roue
+            //row.style.transform = "rotateX(30deg)"; // Rotation pour l'effet de roue
         } else if (rowRect.top < containerRect.top + 100) {
             row.classList.add("fade-top-less");
-            row.style.transform = "rotateX(15deg)"; // Rotation pour l'effet de roue
+            //row.style.transform = "rotateX(15deg)"; // Rotation pour l'effet de roue
         } else if (rowRect.bottom > containerRect.bottom - 50) {
             row.classList.add("fade-bottom");
-            row.style.transform = "rotateX(-30deg)"; // Rotation pour l'effet de roue
+            //row.style.transform = "rotateX(-30deg)"; // Rotation pour l'effet de roue
         } else if (rowRect.bottom > containerRect.bottom - 100) {
             row.classList.add("fade-bottom-less");
-            row.style.transform = "rotateX(-15deg)"; // Rotation pour l'effet de roue
+            //row.style.transform = "rotateX(-15deg)"; // Rotation pour l'effet de roue
         } else {
-            row.style.transform = "rotateX(0deg)"; // Réinitialiser la rotation
+            // row.style.transform = "rotateX(0deg)"; // Réinitialiser la rotation
         }
     });
 }
