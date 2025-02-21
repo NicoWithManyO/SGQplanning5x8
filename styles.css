@@ -14,9 +14,11 @@ body {
     height: 100vh; 
     display: flex; 
     flex-direction: column; 
-    background-color: #0070C0; /* Fond bleu */
-    color: white; /* Texte blanc */
+    background-color: #0070C0;
+    color: white;
     overflow-x: hidden; /* Empêche le défilement horizontal */
+    width: 100%; /* Force la largeur à 100% */
+    position: fixed; /* Empêche le rebond sur iOS */
 }
 .header {
     display: flex;
@@ -48,14 +50,16 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width: 100%; /* 90% de la largeur du viewport */
-    margin: auto; /* Centré horizontalement */
-    overflow-y: scroll; 
-    height: 100vh; 
-    direction: rtl; 
-    position: relative; 
-    scrollbar-width: none; 
-    background-color: white; /* Fond blanc pour le tableau */
+    width: 100%;
+    margin: auto;
+    overflow-y: scroll;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    height: 100vh;
+    direction: rtl;
+    position: relative;
+    scrollbar-width: none;
+    background-color: white;
+    -webkit-overflow-scrolling: touch; /* Pour un défilement plus fluide sur iOS */
 }
 .calendar::-webkit-scrollbar { 
     display: none; 
