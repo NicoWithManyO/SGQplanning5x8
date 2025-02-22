@@ -25,19 +25,20 @@ body {
 }
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
     width: 100%;
     max-width: 690px;
     margin: auto;
+    flex-wrap: wrap;
 }
 .header h2 {
     margin: 0;
     flex: 1;
 }
 .header .logo {
-    max-width: 50px; /* Taille maximale du logo */
+    max-width: 120px; /* Taille maximale du logo */
     height: auto;
 }
 .input-container {
@@ -266,4 +267,13 @@ i:hover {
 .print {
     top: 80%;
 
+}
+
+
+h2 {
+    font-size: clamp(24px, 4vw, 48px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 -2px -2px 4px rgba(255, 255, 255, 0.2),
+                 0px 0px 8px rgba(0, 112, 192, 0.6);
+    transition: text-shadow 0.3s ease;
 }
