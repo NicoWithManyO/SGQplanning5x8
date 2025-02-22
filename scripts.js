@@ -5,6 +5,7 @@ let today = new Date();
 firstLoadedDate.setDate(firstLoadedDate.getDate() - 60);
 lastLoadedDate.setDate(lastLoadedDate.getDate() + 60);
 
+
 const teamCycles = [
     ["Matin", "Matin", "Après-midi", "Après-midi", "Nuit", "Nuit", "Repos", "Repos", "Repos", "Repos"],
     ["Après-midi", "Après-midi", "Nuit", "Nuit", "Repos", "Repos", "Repos", "Repos", "Matin", "Matin"],
