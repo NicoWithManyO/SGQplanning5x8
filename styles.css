@@ -100,7 +100,7 @@ td {
 }
 .weekend { 
     /* background-color: #f0f0f0; */
-    color: rgb(255, 146, 44);
+    color: rgb(255, 44, 192);
 }
 .holiday { 
     color: red; /* Couleur rouge pour les jours fériés */
@@ -239,9 +239,19 @@ td {
     background-color: #0070C0;
     border-radius: 0 5px 5px 0;
     padding: 0 10 15px 15px;
-    opacity: 0.8;
+    opacity: 0.6;
     border: 5px solid #003F7F;
     border-left: transparent;
+    transition: opacity 0.5s ease;
+}
+.side-menu:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+}
+.side-menu:hover p {
+
+    transition: color 0.5s ease;
 }
 
 .fa-minus {
@@ -249,4 +259,5 @@ td {
 }
 i:hover {
     color: #003F7F;
+    transition: color 0.5s ease;
 }
