@@ -289,7 +289,7 @@ function resetFontSize() {
     
     // Réinitialiser la taille de police à 12px pour toutes les cellules
     for (let cell of cells) {
-        cell.style.fontSize = "12px";
+        cell.style.fontSize = "14px";
     }
 }
 

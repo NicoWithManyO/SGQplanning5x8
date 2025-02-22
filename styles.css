@@ -2,6 +2,9 @@ span {
     font-size: 12px;
     transition: color 5s ease-in-out;
 }
+i {
+    cursor: pointer;
+}
 span:hover {
     color: #003F7F;
     transition: color 1s ease-in-out;
@@ -237,8 +240,13 @@ td {
     border-radius: 0 5px 5px 0;
     padding: 0 10 15px 15px;
     opacity: 0.8;
+    border: 5px solid #003F7F;
+    border-left: transparent;
 }
 
 .fa-minus {
     padding: 10px 0px;
+}
+i:hover {
+    color: #003F7F;
 }
