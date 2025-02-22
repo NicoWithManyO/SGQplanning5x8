@@ -67,7 +67,7 @@ body {
 table {
     margin: auto;
     width: 90%;
-    max-width: 690px;
+    max-width: 1280px;
     border-collapse: collapse; 
     direction: ltr; 
     background-color: rgba(255, 255, 255, 0.9);
@@ -230,7 +230,15 @@ td {
     top: 50%;
     transform: translateY(-50%); 
     display: block; 
-    flex-direction: column; gap: 10px;
-    color: black;
-    font-size: clamp(12px, 2vw, 14px);
+    flex-direction: column; gap: 30px;
+    color: white;
+    font-size: clamp(12px, 2vw, 18px);
+    background-color: #0070C0;
+    border-radius: 0 5px 5px 0;
+    padding: 0 10 15px 15px;
+    opacity: 0.8;
+}
+
+.fa-minus {
+    padding: 10px 0px;
 }
