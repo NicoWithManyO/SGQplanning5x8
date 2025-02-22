@@ -261,3 +261,8 @@ i:hover {
     color: #003F7F;
     transition: color 0.5s ease;
 }
+
+.print {
+    top: 80%;
+
+}
