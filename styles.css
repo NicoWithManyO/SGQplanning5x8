@@ -223,3 +223,14 @@ td {
     padding: 2px;
     border-radius: 2px;
 }
+.side-menu {
+    z-index: 1000; 
+    position: fixed; 
+    left: 0; 
+    top: 50%;
+    transform: translateY(-50%); 
+    display: block; 
+    flex-direction: column; gap: 10px;
+    color: black;
+    font-size: clamp(12px, 2vw, 14px);
+}

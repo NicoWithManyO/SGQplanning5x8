@@ -259,3 +259,41 @@ document.getElementById("calendarContainer").addEventListener("scroll", onScroll
 generateCalendar(firstLoadedDate, 120, 'forward');
 setTimeout(scrollToToday, 100);
 updateTeamVisibility();
+
+function increaseFontSize() {
+    const table = document.getElementById("calendarBody");
+    const cells = table.getElementsByTagName("td");
+    const currentSize = window.getComputedStyle(cells[0]).fontSize;
+    const newSize = parseFloat(currentSize) + 2;
+    
+    // Appliquer la nouvelle taille à toutes les cellules
+    for (let cell of cells) {
+        cell.style.fontSize = newSize + "px";
+    }
+}
+
+function decreaseFontSize() {
+    const table = document.getElementById("calendarBody");
+    const cells = table.getElementsByTagName("td");
+    const currentSize = window.getComputedStyle(cells[0]).fontSize;
+    const newSize = Math.max(8, parseFloat(currentSize) - 2); // Minimum 8px
+    
+    // Appliquer la nouvelle taille à toutes les cellules
+    for (let cell of cells) {
+        cell.style.fontSize = newSize + "px";
+    }
+}
+function resetFontSize() {
+    const table = document.getElementById("calendarBody");
+    const cells = table.getElementsByTagName("td");
+    
+    // Réinitialiser la taille de police à 12px pour toutes les cellules
+    for (let cell of cells) {
+        cell.style.fontSize = "12px";
+    }
+}
+
+
+// Ajout des gestionnaires d'événements aux icônes de navigation
+document.querySelector('.fa-chevron-up').parentElement.addEventListener('click', increaseFontSize);
+document.querySelector('.fa-chevron-down').parentElement.addEventListener('click', decreaseFontSize);
