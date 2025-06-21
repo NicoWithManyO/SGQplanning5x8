@@ -82,21 +82,22 @@ function generateCalendar(startDate, daysToAdd, direction) {
         }
         row.appendChild(dateCell);
 
-        for (let j = 0; j < 5; j++) {
-            let extraCell = document.createElement("td");
-            let daysSinceStart = Math.floor((newDate - teamStartDates[j]) / (1000 * 60 * 60 * 24));
-            let cycleIndex = (daysSinceStart + teamInitialOffsets[j]) % teamCycles[j].length;
-            if (cycleIndex < 0) {
-                cycleIndex = (teamCycles[j].length + cycleIndex) % teamCycles[j].length;
-            }
-            let cycle = teamCycles[j][cycleIndex];
-            extraCell.innerText = cycle === "Matin" ? "M" : cycle === "Après-midi" ? "AM" : cycle === "Nuit" ? "N" : "R";
-            if (cycle !== "Repos") {
-                extraCell.style.backgroundColor = teamColors[j];
-            }
-            extraCell.classList.add("extra-cell", `team-${j}`);
-            row.appendChild(extraCell);
+        // Générer seulement la cellule pour l'équipe 2 (index 2)
+        let j = 2; // Seulement l'équipe 2
+        let extraCell = document.createElement("td");
+        let daysSinceStart = Math.floor((newDate - teamStartDates[j]) / (1000 * 60 * 60 * 24));
+        let cycleIndex = (daysSinceStart + teamInitialOffsets[j]) % teamCycles[j].length;
+        if (cycleIndex < 0) {
+            cycleIndex = (teamCycles[j].length + cycleIndex) % teamCycles[j].length;
         }
+        let cycle = teamCycles[j][cycleIndex];
+        extraCell.innerText = cycle === "Matin" ? "M" : cycle === "Après-midi" ? "AM" : cycle === "Nuit" ? "N" : "R";
+        if (cycle !== "Repos") {
+            extraCell.style.backgroundColor = teamColors[j];
+        }
+        extraCell.classList.add("extra-cell", `team-${j}`);
+        row.appendChild(extraCell);
+
         if (direction === 'forward') {
             fragment.appendChild(row);
         } else {

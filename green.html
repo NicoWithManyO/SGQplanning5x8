@@ -1,0 +1,44 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning 5x8 Fusion Continue SGQ/ACC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Planning 5x8 Fusion Continue</h2>
+        <img src="sgq.png" alt="Logo SGQ" class="logo"> 
+    </div>
+    <div class="input-container">
+        <button class="btn-today" onclick="scrollToToday()">AUJOURD'HUI</button>
+        <input type="date" id="dateInput" class="date-input">
+        <button class="btn-go" onclick="validateDate()">GO</button>
+    </div>
+    <div class="checkbox-container">
+        <label class="three"><input type="checkbox" class="team-checkbox" data-team="2" checked></label>
+    </div>
+    <div class="side-menu">
+        <p>FontSize</p>
+        <div class="nav-icon" onclick="increaseFontSize()"><i class="fas fa-chevron-up"></i></div>
+        <div class="nav-icon" onclick="resetFontSize()"><i class="fas fa-minus"></i></div>
+        <div class="nav-icon" onclick="decreaseFontSize()"><i class="fas fa-chevron-down"></i></div>
+
+    </div>
+
+
+    <div id="calendarContainer" class="calendar">
+        <table id="calendarBody">
+            <!-- Le contenu du calendrier sera généré par JavaScript -->
+        </table>
+    </div>
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            Chargement en cours ...
+        </div>
+    </div>
+    <!-- <span>manyO.dev</span> -->
+    <script src="scripts.js"></script>
+</body>
+</html>
